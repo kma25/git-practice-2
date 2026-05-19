@@ -390,36 +390,3 @@ git merge upstream/main
 ```bash
 git merge upstream/main
 ```
-
----
-
-## Итоговая схема работы
-
-Итоговый вариант инструкции получается после слияния веток `local` и `global` в основную ветку `main`.
-
-```text
-main   — структура документа, создание GitHub и установка Git
-local  — команды для локальной работы с Git
-global — команды для удаленного Git и форков
-```
-
-Общая последовательность выполнения практической работы:
-
-```bash
-git checkout main
-git checkout -b local
-git add README.md
-git commit -m "Добавлены команды локального Git"
-git push -u origin local
-
-git checkout main
-git checkout -b global
-git add README.md
-git commit -m "Добавлены команды удаленного Git и форки"
-git push -u origin global
-
-git checkout main
-git merge local
-git merge global
-git push origin main
-```
